@@ -9,6 +9,12 @@
   <a href="<%= followers_user_path(@user) %>">
     <strong id="followers" class="stat">
       <%= @user.followers.count %>
+      <% if @user && !@user.activated? && @user.followers.count > 2 %>
+        <% @user.activate %>
+      <% end %>
+      <% if @user.activated? %>
+        <h3>activated<h3>
+      <% end %>
     </strong>
     followers
   </a>
