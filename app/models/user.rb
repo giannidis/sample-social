@@ -12,12 +12,20 @@ class User < ActiveRecord::Base
   before_save   :downcase_email
   before_create :create_activation_digest
   validates :name, presence: true, length: { maximum: 50 }
+  validates :surname, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+  GENDER_TYPES = [ ["Male","0"], [ "Female","1" ] ]
+  
+  validates_inclusion_of :is_female, in: [true, false]
+
+  validates :school, length: { maximum: 50 }
+  validates :hometown, length: { maximum: 50 }
 
    # Returns the hash digest of the given string. mallon gia to test
   def User.digest(string)

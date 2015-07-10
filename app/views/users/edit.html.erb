@@ -6,11 +6,31 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Όνομα" %>
       <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :surname, "Επίθετο" %>
+      <%= f.text_field :surname, class: 'form-control' %>
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :date_of_birth %>
+      <%= f.date_field :date_of_birth, class: 'form-control' %>
+
+      <%= f.label :is_female, "Gender" %>
+      <%= f.select :is_female, User::GENDER_TYPES, class: 'form-control' %>
+
+      <%= f.label :hometown, "Πόλη" %>
+      <%= f.text_field :hometown, class: 'form-control' %>
+
+      <%= f.label :school, "Σχολείο" %>
+      <%= f.text_field :school, class: 'form-control' %>
+
+      <br><br><br>
+
+
+      <p>Σημ. Προσθέστε password μονο αν θέλετε να το αλλάξετε </p>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>

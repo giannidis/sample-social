@@ -9,6 +9,22 @@
       </section>
       <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
+
+          <br>
+          <h1>About me</h1>
+           <p>Επίθετο:<%= @user.surname %></p>
+
+          <p>Gender:
+          <% if @user.is_female? %>
+            <%= "Γυναίκα" %>
+          <% else %>
+            <%= "Άνδρας" %>
+          <% end %></p>
+
+          <p>Ημ.Γέννησης:<%= @user.date_of_birth %></p>
+
+          <p>Σχολείο:<%= @user.school %></p>
+          <p>Πόλη:<%= @user.hometown %></p>
       </section>
     </aside>
     <div class="col-md-8">

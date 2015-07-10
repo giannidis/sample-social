@@ -6,11 +6,19 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Όνομα" %>
       <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :surname, "Επίθετο" %>
+      <%= f.text_field :surname, class: 'form-control' %>
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+      
+
+      <%= f.label :is_female, "Gender" %>
+      <%= f.select :is_female, User::GENDER_TYPES, class: 'form-control' %> 
+
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
@@ -18,7 +26,7 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Δημιουργία προφίλ", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
