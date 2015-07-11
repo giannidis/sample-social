@@ -18,6 +18,7 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 
 gem 'paperclip', '4.2.0'
+gem 'rinku', '~> 1.7.3'
 
 #gia na exw to autocomplete
 gem 'chosen-rails'
