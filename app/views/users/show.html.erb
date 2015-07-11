@@ -3,7 +3,8 @@
   <aside class="col-md-4">
     <section>
       <h1>
-        <%= @user.name %>
+        <%= @user.name %><br><br>
+        <%= image_tag @user.image.url(:medium) %>
       </h1>
     </section>
     <section class="stats">
@@ -11,6 +12,7 @@
       <br>
           <h1>About</h1>
            <p>Επίθετο:<%= @user.surname %></p>
+
 
           <p>Gender:
           <% if @user.is_female? %>

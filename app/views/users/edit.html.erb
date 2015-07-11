@@ -9,6 +9,13 @@
       <%= f.label :name, "Όνομα" %>
       <%= f.text_field :name, class: 'form-control' %>
 
+        <%= f.label :image %><br>
+        <%= f.file_field :image %>
+
+      <%= f.label :school %>
+      <%= f.select(:school, User.all.collect {|p| [ p.school, p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
+    
+
       <%= f.label :surname, "Επίθετο" %>
       <%= f.text_field :surname, class: 'form-control' %>
 

@@ -17,6 +17,12 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 
+gem 'paperclip', '4.2.0'
+
+#gia na exw to autocomplete
+gem 'chosen-rails'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+
 group :development, :test do
   gem 'sqlite3',     '1.3.10'
   gem 'byebug',      '3.4.0'
